@@ -10,7 +10,8 @@ public class AudioManagement : MonoBehaviour
     AudioSource cursed;
     [SerializeField]
     float transSpeed = 0.005f;
-    bool anger = false;
+
+    public bool anger = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +51,7 @@ public class AudioManagement : MonoBehaviour
             }
         }
 
+        //Testing purposes
         if( Input.GetKeyDown(KeyCode.E) )
         {
             anger = !anger;
