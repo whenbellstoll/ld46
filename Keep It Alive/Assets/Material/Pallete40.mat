@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pallete39
+  m_Name: Pallete40
   m_Shader: {fileID: 10761, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -85,5 +85,5 @@ Material:
     - _UseUIAlphaClip: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.85098046, g: 0.82745105, b: 0.7725491, a: 1}
+    - _Color: {r: 0.5294118, g: 0.5058824, b: 0.49803925, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
