@@ -12,6 +12,8 @@ public class Shadowman : MonoBehaviour
     AudioManagement music;
     [SerializeField]
     Material[] materials;
+    [SerializeField]
+    SkinnedMeshRenderer shadowman;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +36,11 @@ public class Shadowman : MonoBehaviour
         {
             if(timer > 5)
             {
-                transform.Translate(transform.forward * 0.2f);
+                transform.Translate(transform.forward * 0.1f);
             }
             else
             {
-                transform.Translate(transform.forward * 0.3f);
+                transform.Translate(transform.forward * 0.2f);
             }
             
             if(Random.Range(0, 7) == 3)
@@ -49,11 +51,15 @@ public class Shadowman : MonoBehaviour
             {
                 transform.localScale = new Vector3(1, 1, 1);
             }
+            
+            shadowman.material = materials[Random.Range(1,4)];
+            
            
         }
         else
         {
             transform.localScale = new Vector3(1, 1, 1);
+            shadowman.material = materials[0];
         }
     }
     private void OnCollisionEnter(Collision collision)
