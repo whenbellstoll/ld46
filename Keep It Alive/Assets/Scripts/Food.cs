@@ -10,6 +10,12 @@ public class Food : MonoBehaviour
     GameObject carriedObject;
     public float distance;
     public float smooth;
+
+    //For piano playing
+    [SerializeField]
+    Shadowman shadow;
+    [SerializeField]
+    AudioManagement am;
     // Use this for initialization
     void Start()
     {
@@ -58,6 +64,13 @@ public class Food : MonoBehaviour
                     carrying = true;
                     carriedObject = hit.collider.gameObject;
                     carriedObject.GetComponent<Rigidbody>().isKinematic = true;
+                }
+                if(hit.collider.gameObject.name == "piano" )
+                {
+                    if(shadow.askFor == Shadowman.AskFor.Piano)
+                    {
+                        am.pianoPlay = true;
+                    }
                 }
             }
         }

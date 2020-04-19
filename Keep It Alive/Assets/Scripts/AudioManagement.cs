@@ -9,9 +9,12 @@ public class AudioManagement : MonoBehaviour
     [SerializeField]
     AudioSource cursed;
     [SerializeField]
+    AudioSource piano;
+    [SerializeField]
     float transSpeed = 0.005f;
 
     public bool anger = false;
+    public bool pianoPlay = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,7 @@ public class AudioManagement : MonoBehaviour
             AudioSource[] audioSs = GetComponents<AudioSource>();
             main = audioSs[0];
             cursed = audioSs[1];
+            piano = audioSs[2];
         }
 
         if( anger )
@@ -38,6 +42,7 @@ public class AudioManagement : MonoBehaviour
             {
                 main.volume -= transSpeed;
             }
+            
         }
         else
         {
@@ -50,7 +55,22 @@ public class AudioManagement : MonoBehaviour
                 main.volume += transSpeed;
             }
         }
-
+        if( pianoPlay )
+        {
+            if (main.volume > 0)
+            {
+                main.volume -= transSpeed;
+            }
+            if (cursed.volume > 0)
+            {
+                cursed.volume -= transSpeed;
+            }
+            if(piano.volume < 1 )
+            {
+                piano.volume += transSpeed;
+            }
+            anger = false;
+        }
         //Testing purposes
         if( Input.GetKeyDown(KeyCode.E) )
         {
