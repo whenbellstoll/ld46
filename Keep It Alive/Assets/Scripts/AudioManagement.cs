@@ -44,7 +44,7 @@ public class AudioManagement : MonoBehaviour
             }
             
         }
-        else
+        else if ( !pianoPlay )
         {
             if (cursed.volume > 0)
             {

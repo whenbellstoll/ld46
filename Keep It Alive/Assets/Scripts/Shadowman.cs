@@ -14,8 +14,10 @@ public class Shadowman : MonoBehaviour
     Material[] materials;
     [SerializeField]
     SkinnedMeshRenderer shadowman;
+
     [SerializeField]
     UnityEngine.UI.Text text;
+
     public enum AskFor
     {
         Cigarette,
@@ -40,8 +42,38 @@ public class Shadowman : MonoBehaviour
         Vector3 relative = player.transform.position - transform.position;
         float angle = Mathf.Atan2(relative.x, relative.z) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, angle, 0);
+        if( timer < 40 && music.pianoPlay )
+        {
+            timer = 75;
+        }
+        //Ending Dialouge
+        if(timer < 75 && timer > 74)
+        {
+            text.text = "Ah, yes. It's been ages since I've heard anything as pleasant as that.";
+        }
+        else if(timer < 71 && timer > 70)
+        {
+            text.text = "I can feel myself fading, a shadow of everything we were.";
+        }
+        else if (timer < 65 && timer > 64)
+        {
+            text.text = "It was wonderful, a vacant joy unknowable to this world.";
+        }
+        else if (timer < 61 && timer > 60)
+        {
+            text.text = "But I think its time to let it go, rather than try and keep it alive.";
+        }
+        else if (timer < 55 && timer > 54)
+        {
+            text.text = "Thank you for humoring me, but it's all just a burning memory now.";
+        }
+        else if (timer < 51 && timer > 50)
+        {
+            Application.Quit();
+        }
 
-        if( timer > 39 )
+
+        if ( timer > 39 && timer < 41)
         {
             if(askFor == AskFor.Cigarette)
             {
@@ -88,7 +120,7 @@ public class Shadowman : MonoBehaviour
             }
         }
 
-        if( (int)timer % 10 == 5 )
+        if( (int)timer % 10 == 5 && timer < 45 )
         {
              text.text = " ";
         }
@@ -117,7 +149,7 @@ public class Shadowman : MonoBehaviour
             shadowman.material = materials[Random.Range(1,4)];
             if (askFor != AskFor.Piano)
             {
-                text.text = "I told you I wanted you to get me my " + askFor;
+                text.text = "I told you I wanted my " + askFor + ". Get it.";
             }
             else
             {
@@ -165,7 +197,7 @@ public class Shadowman : MonoBehaviour
         if(music.anger && collision.gameObject.name == "Player")
         {
             //end game
-
+            Application.Quit();
         }
     }
 }
