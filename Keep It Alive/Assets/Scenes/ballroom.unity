@@ -268,6 +268,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2547648426147011276, guid: 534c8677c4ac49e4cb319d539aeab9a5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dabed799b3975ae498422264bcbfa707, type: 2}
     - target: {fileID: 5663708431570143479, guid: 534c8677c4ac49e4cb319d539aeab9a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -440,9 +445,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5b57858620181499186f13d1cf498a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 20
+  timer: 40
   player: {fileID: 56167114}
   music: {fileID: 2105878646}
+  materials:
+  - {fileID: 2100000, guid: dabed799b3975ae498422264bcbfa707, type: 2}
+  - {fileID: 2100000, guid: c021826e00b34e24c962b0cceebfaff1, type: 2}
+  - {fileID: 2100000, guid: 97fc634ae2097e044862852eb996f725, type: 2}
+  - {fileID: 2100000, guid: ba9ecec3a606783478db77d4bde51bb6, type: 2}
+  - {fileID: 2100000, guid: 1e879acf6d505504ba7ccd299c807456, type: 2}
 --- !u!65 &899220284
 BoxCollider:
   m_ObjectHideFlags: 0

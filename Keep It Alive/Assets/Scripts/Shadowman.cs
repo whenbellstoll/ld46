@@ -10,6 +10,8 @@ public class Shadowman : MonoBehaviour
     GameObject player;
     [SerializeField]
     AudioManagement music;
+    [SerializeField]
+    Material[] materials;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +53,7 @@ public class Shadowman : MonoBehaviour
         }
         else
         {
-
+            transform.localScale = new Vector3(1, 1, 1);
         }
     }
     private void OnCollisionEnter(Collision collision)
