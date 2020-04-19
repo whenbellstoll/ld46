@@ -66,8 +66,14 @@ public class Shadowman : MonoBehaviour
     {
         if(collision.gameObject.tag == "Food")
         {
-            timer = 60;
+            timer = 40;
             Destroy(collision.gameObject);
+        }
+
+        if(music.anger && collision.gameObject.name == "Player")
+        {
+            //end game
+
         }
     }
 }
