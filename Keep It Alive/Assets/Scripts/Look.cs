@@ -14,7 +14,6 @@ public class Look : MonoBehaviour
     private Vector2 mouseLook;
     // smooth the mouse moving
     private Vector2 smoothV;
-
     // Use this for initialization
     void Start()
     {
@@ -24,7 +23,7 @@ public class Look : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // md is mosue delta
+        // md is mouse delta
         var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
         md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
         // the interpolated float result between the two float values
@@ -33,8 +32,22 @@ public class Look : MonoBehaviour
         // incrementally add to the camera look
         mouseLook += smoothV;
 
+        
+        //for when the camera gets to its bounds
+        Quaternion beforeModify = transform.localRotation;
+
         // vector3.right means the x-axis
+        // pitch limit
+        if( mouseLook.y > 89 )
+        {
+            mouseLook.y = 89;
+        }
+        if( mouseLook.y < -89 )
+        {
+            mouseLook.y = -89;
+        }
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
         character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, character.transform.up);
+        
     }
 }
