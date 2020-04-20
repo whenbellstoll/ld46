@@ -92,6 +92,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10070}
     - Class: 114
+      Script: {instanceID: 10098}
+    - Class: 114
       Script: {instanceID: 10354}
     - Class: 114
       Script: {instanceID: 10428}
@@ -109,6 +111,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11224}
     - Class: 114
       Script: {instanceID: 11478}
+    - Class: 114
+      Script: {instanceID: 11486}
     - Class: 114
       Script: {instanceID: 11592}
     - Class: 115
@@ -683,5 +687,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/ballroom.unity
-  playerPath: C:/Game Projects/ludum dare 46/Its just a burning memory/ld46/Keep It
-    Alive/WindowsBuild/Keep It Alive.exe
+  playerPath: C:/Game Projects/ludum dare 46/WindowsBuild/Keep It Alive.exe

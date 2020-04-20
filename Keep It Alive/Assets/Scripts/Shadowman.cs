@@ -17,7 +17,7 @@ public class Shadowman : MonoBehaviour
 
     [SerializeField]
     UnityEngine.UI.Text text;
-
+   
     public enum AskFor
     {
         Cigarette,
@@ -44,26 +44,26 @@ public class Shadowman : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, angle, 0);
         if( timer < 40 && music.pianoPlay )
         {
-            timer = 75;
+            timer = 100;
         }
         //Ending Dialouge
-        if(timer < 75 && timer > 74)
+        if(timer < 100 && timer > 99)
         {
             text.text = "Ah, yes. It's been ages since I've heard anything as pleasant as that.";
         }
-        else if(timer < 71 && timer > 70)
+        else if(timer < 91 && timer > 90)
         {
             text.text = "I can feel myself fading, a shadow of everything we were.";
         }
-        else if (timer < 65 && timer > 64)
+        else if (timer < 81 && timer > 80)
         {
             text.text = "It was wonderful, a vacant joy unknowable to this world.";
         }
-        else if (timer < 61 && timer > 60)
+        else if (timer < 71 && timer > 70)
         {
             text.text = "But I think its time to let it go, rather than try and keep it alive.";
         }
-        else if (timer < 55 && timer > 54)
+        else if (timer < 61 && timer > 60)
         {
             text.text = "Thank you for humoring me, but it's all just a burning memory now.";
         }
